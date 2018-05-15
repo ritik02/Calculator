@@ -17,7 +17,6 @@ class Calculator
    end
    def divide (number2=1.0)
       if number2.zero?
-      temp=@number
       puts "Division not performed , enter another number other than zero"
       return
       end
@@ -54,12 +53,12 @@ loop do
        when 'divide'
            if values.length==2
                object1.divide values[1].to_f
-           else object1.subtract
+           else object1.divide
            end
        when 'multiply'
           if values.length==2
              object1.multiply values[1].to_f
-          else object1.subtract
+          else object1.multiply
           end
       else
        puts "Invalid Command , enter a valid one"
