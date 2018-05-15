@@ -30,7 +30,13 @@ class Calculator
    end
 end
 
+def CheckValidity? value
+   return true if value.length==2 && (value[1].to_i.to_s==value[1] || value[1].to_f.to_s== value[1])
+   return false
+end
+
 object1=Calculator.new
+   
 loop do
     operation=gets.chomp
     values=operation.split(" ")
@@ -41,22 +47,22 @@ loop do
        when 'cancel'
          object1.cancel
        when 'add'
-          if values.length==2
+          if CheckValidity? values
              object1.add values[1].to_f
           else object1.add
           end
        when 'subtract'
-           if values.length==2
+           if CheckValidity? values
                object1.subtract values[1].to_f
            else object1.subtract
            end
        when 'divide'
-           if values.length==2
+          if CheckValidity? values
                object1.divide values[1].to_f
            else object1.divide
            end
        when 'multiply'
-          if values.length==2
+          if CheckValidity? values
              object1.multiply values[1].to_f
           else object1.multiply
           end
