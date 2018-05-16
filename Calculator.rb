@@ -1,5 +1,4 @@
 class Calculator
-   @number
    def initialize (number=0.0)
       @number=number
    end
